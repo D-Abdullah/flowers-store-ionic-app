@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>checkout</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only [navPush]="'CartPage'">
+          <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list class="form-style">
+        <ion-item no-lines> 
+          <ion-input type="text" placeholder="Full Name"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines> 
+          <ion-input type="tel" placeholder="Mobile No"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines> 
+          <ion-input type="text" placeholder="Address"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines> 
+          <ion-textarea type="text" rows="5" placeholder="Notes"></ion-textarea>
+        </ion-item>
+    </ion-list>
+
+    <div class="pay-way">
+      <ion-list radio-group no-margin>
+          <ion-item no-lines>
+            <img src="assets/imgs/visa.png" item-start>
+            <ion-radio value="visa" checked="true"></ion-radio>
+          </ion-item>
+        
+          <ion-item no-lines>
+            <img src="assets/imgs/paypal.png" item-start>
+            <ion-radio value="paypal"></ion-radio>
+          </ion-item>
+
+          <ion-item no-lines>
+            <img src="assets/imgs/master.png" item-start>
+            <ion-radio value="card"></ion-radio>
+          </ion-item>
+      </ion-list>
+
+      <ion-list class="form-style" no-margin>
+        <ion-item no-lines> 
+          <ion-input type="number" placeholder="Card"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    
+    <ion-list class="cash" no-margin>
+      <ion-item no-lines>
+        <ion-label>Cash when Reciving my order</ion-label>
+        <ion-radio value="when recieving"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+</ion-content>
+
+<ion-footer class="main-footer">
+  <ion-row>
+    <ion-col col-8>
+      <ion-item no-lines>
+        Total Cost $ 700
+      </ion-item>
+    </ion-col>
+    <ion-col col-4>
+        <button color="primary" ion-button icon-only block>
+              <ion-icon name="checkmark"></ion-icon>
+        </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

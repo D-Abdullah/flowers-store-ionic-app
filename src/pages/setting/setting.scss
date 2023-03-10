@@ -1,0 +1,125 @@
+page-setting {
+    .scroll-content{
+        padding:16px !important;
+    }
+    h3{
+       font-size: 1.5rem;
+       font-weight: 500;
+       color:color($colors,primary);   
+    }
+    .profile-img{
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 20px;
+        img{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #ddd;
+        }
+        .upload-img{
+            width: 35px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 50%;
+            background: color($colors,primary);
+            position: absolute;
+            bottom: 5px;
+            right: -8px;
+            font-size: 11px;
+            text-align: center;
+            ion-icon{
+                line-height: inherit;
+                font-size: 20px;
+            }
+        }
+    }
+    .form-style{
+        .label{
+            color:color($colors,dark);    
+        }
+        .select-md{
+            .select-icon{
+                .select-icon-inner{
+                    color:color($colors,primary);   
+                }
+            } 
+        } 
+    }
+
+    .social-media{
+        margin-bottom: 0;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ccc;
+        display: inline-block;
+        width: 100%;
+        .item-radio{
+            background: none;
+            width: 33.333%;
+            float: left;
+            padding: 0;
+            .item-inner{
+                padding: 0;
+                .input-wrapper{
+                    flex: initial;
+                }
+            }
+            [item-start]{
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: inline-block;
+                text-align: center;
+                line-height: 43px;
+                color: color($colors,light);
+            }
+            &:nth-child(1){
+                [item-start]{
+                    background: color($colors,facebook);
+                }
+            }
+            &:nth-child(2){
+                [item-start]{
+                    background: color($colors,twitter);
+                }
+            }
+            &:nth-child(3){
+                [item-start]{
+                    background: color($colors,google);
+                }
+            }
+            .radio-md{
+                margin: 0 13px;
+                .radio-icon{
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 2px;
+                    background: color($colors,light);
+                    border-color:#ccc;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+                }
+                .radio-inner {
+                    left: 3px;
+                    top: 3px;
+                    border-radius: 2px;
+                }
+            } 
+        }
+    }
+
+    .animate-app{
+        .item{
+            background: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: color($colors,primary);
+            padding: 0;
+            .item-inner{
+                padding: 0;
+            }
+        }
+    }
+}

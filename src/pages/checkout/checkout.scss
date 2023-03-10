@@ -1,0 +1,52 @@
+page-checkout {
+    .scroll-content{
+        padding:16px !important;
+    }
+    .list{
+        display: inline-block;
+        width: 100%;
+        &.cash{
+            .item{
+                background: none;
+                padding: 0;
+                font-size: 1.4rem;
+            }
+        }
+    }
+    .pay-way{
+        margin-bottom: 15px;
+        .item-radio{
+            background: none;
+            width: 33.333%;
+            float: left;
+            padding: 0;
+            .item-inner{
+                padding: 0;
+            }
+            img{
+                width: 60px;
+                height: 35px;
+                object-fit: contain;
+            }
+        }
+    }
+}
+
+/*form style*/
+.form-style{
+    border-bottom: 1px solid #ccc;
+    .item{
+        min-height: 40px;
+        margin-bottom: 13px;
+        border-radius: 5px;
+        padding:0 10px;
+        font-size: 1.4rem;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        .item-inner{
+            padding: 0;
+            .text-input-md{
+                margin:8px 0;
+            }
+        }
+    }
+}

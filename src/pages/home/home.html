@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <button ion-button icon-only menuToggle>
+        <ion-icon color="light" name="menu"></ion-icon>
+    </button> 
+    <ion-title>Home</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only [navPush]="'CartPage'">
+          <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-slides class="home-slider" autoplay="5000" loop="true" speed="500" pager>
+    <ion-slide [navPush]="'ListPage'" *ngFor="let slide of slides" 
+    [ngStyle]="{'background-image': 'url(' + slide.img + ')'}">
+      <p>{{slide.description}}</p>
+      <h2>{{slide.title}}</h2>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

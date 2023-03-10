@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>details</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only [navPush]="'CartPage'">
+          <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="details-img">
+      <button (click)="likeItem=!likeItem" ion-button icon-only clear>
+          <ion-icon *ngIf="!likeItem" color="dark" name="heart"></ion-icon>
+          <ion-icon *ngIf="likeItem" color="primary" name="heart"></ion-icon>
+      </button>
+      <button (click)="shareSheetShare()" color="dark" ion-button icon-only clear>
+          <ion-icon name="share"></ion-icon>
+      </button>
+  </div>
+
+  <div class="details">
+    <div class="details-content">
+      <h3 no-margin>Bouquet Name<span float-end>$ 300</span></h3>
+      <p>
+      Like many Flowers, different Colors of Roses also often carry their own singnificance.
+      </p>
+
+
+      <div class="type-color">
+        <ion-list>
+          <ion-list-header>Flowers type</ion-list-header>
+          <ion-item>- Soft Pink Rose</ion-item>
+          <ion-item>- Soft Pink Rose</ion-item>
+          <ion-item>- Green Plant </ion-item>
+          <ion-item>- Green Plant </ion-item>
+        </ion-list>
+
+        <ion-list>
+          <ion-list-header>Flowers Colors</ion-list-header>
+          <ion-item>- Soft Pink Rose</ion-item>
+          <ion-item>- Soft Pink Rose</ion-item>
+          <ion-item>- Green Plant </ion-item>
+          <ion-item>- Green Plant </ion-item>
+        </ion-list>
+
+        <ion-list radio-group>
+          <ion-list-header>Pick Size</ion-list-header>
+
+          <ion-item>
+            <ion-label>Small</ion-label>
+            <ion-radio checked="true" value="small"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Medium</ion-label>
+            <ion-radio value="medium"></ion-radio>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Large</ion-label>
+            <ion-radio value="Large"></ion-radio>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <button [navPush]="'CartPage'"  ion-button block>Add to cart</button>
+  </div>
+</ion-content>

@@ -1,0 +1,162 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.main-bg{
+    background:url(../assets/imgs/bg.png);
+    @include background;
+}
+.content-md {
+    background-color: #f0f0f1;
+}
+//header
+.header{
+    &:after{
+        display: none;
+    }
+    .back-button{
+        width: 35px;
+        color: color($colors,light); 
+        ion-icon{
+            font-size: 2.5rem;
+        }
+    }
+    ion-title{
+        .toolbar-title{
+            text-align: left;
+            color: color($colors,light); 
+            font-weight: normal; 
+            text-transform: capitalize;
+            padding-left: 0;
+        }
+    }
+    .bar-button{
+        width: 45px;
+        ion-icon{
+            font-size: 2.4rem;
+        }
+    }
+}
+
+/*radio style*/
+.item-radio{
+    .label{
+        color: color($colors,dark) !important;   
+    }
+    .radio-md{
+        .radio-icon {
+            width: 14px;
+            height: 14px;
+            border-width: 1px;
+            border-color: color($colors,primary); 
+        }
+    }
+}
+
+/*checkbox style*/
+.checkbox-md{
+    .checkbox-icon {
+        border-width: 1px;
+        border-color:  color($colors,primary); 
+    }
+    .checkbox-checked{
+        .checkbox-inner {
+            left: 5px;
+            top: 1px;
+        }
+    } 
+} 
+
+/*menu*/
+.menu-inner{
+    width: 280px;
+    .header{
+        text-align: center;
+        .toolbar-md{
+            padding: 20px 0;
+            img{
+                width: 90px;
+                height: 90px;
+                border-radius: 50%;
+            }
+            h2{
+                color:color($colors,light); 
+                font-size: 1.5rem; 
+                margin: 5px 0;
+            }
+            p{
+                color:color($colors,light); 
+                font-size: 1.3rem; 
+                margin:0; 
+            }
+        }
+    }
+    .list{
+        margin: 20px 0;
+        .item{
+            background: none;
+            text-align: center;
+            padding: 0;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 1.5rem;
+            color: lighten(color($colors,dark), 5%);
+            position: relative; 
+            &.active-item{
+                &:after{
+                    content:'';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 90%;
+                    height: 100%;
+                    border-radius: 0 5px 5px 0;
+                    background: lighten(color($colors,primary), 40%);
+                    z-index: -1;
+                }
+            }
+            .item-inner{
+                padding: 0;
+                .label{
+                    margin: 0;
+                }
+            }
+        }
+    }
+    .footer{
+        &:before{
+            display: none;
+        }
+        p{
+            height: 44px;
+            line-height: 44px;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            color: color($colors,light);
+            &:after{
+                content:'';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 90%;
+                height: 100%;
+                border-radius: 0 5px 5px 0;
+                background:color($colors,primary);
+                z-index: -1;
+            }
+        }
+    }
+}

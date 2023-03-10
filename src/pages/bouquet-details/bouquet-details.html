@@ -1,0 +1,106 @@
+<ion-header>
+
+  <ion-navbar>
+      <ion-title>Make Your Bouquet</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only [navPush]="'CartPage'">
+            <ion-icon name="cart"></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-item class="main-info" no-lines margin-bottom>
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/007.png">
+      </ion-thumbnail>
+      <h2>Rose Bouquet</h2>
+      <p>Small <span float-end>$ 100</span></p>
+      <ion-note>Your Bouquet Contain 30 Flowers</ion-note>
+    </ion-item>
+
+    <div class="custom-order">
+      <h3>Pick your Favorite Flowers</h3>
+      <div class="select-option">
+        <ion-row class="main-grid" *ngFor="let item of list" >
+          <ion-col col-2>
+              <span>{{item.name}}</span>
+          </ion-col>
+          <ion-col col-4>
+              <span>{{item.price}}</span>
+          </ion-col>
+          <ion-col col-3>   
+              <ion-row class="qty-items" no-padding item-end>
+                  <ion-col no-padding>
+                      <button ion-button icon-only block clear color="primary" (click)="decrementValue(item)" no-margin>
+                            <ion-icon name="md-remove"></ion-icon>
+                      </button>
+                  </ion-col>
+                  <ion-col text-center no-padding>
+                    <span class="qty">{{item.count}}</span>
+                  </ion-col>
+                  <ion-col no-padding>
+                      <button ion-button icon-only block clear color="primary"
+                      (click)="incrementValue(item)" no-margin float-end>
+                            <ion-icon name="md-add"></ion-icon>
+                      </button>
+                  </ion-col>
+              </ion-row>
+          </ion-col>
+          <ion-col col-3 text-center>
+            <ion-item [ngClass]="{'select-item':item.selectItem}" no-lines>
+              <ion-label *ngIf="!item.selectItem">Colors</ion-label>
+              <ion-select [(ngModel)]="item.colors" (ionChange)="onSelectChange(item)">
+                <ion-option>Red</ion-option>
+                <ion-option>Rose</ion-option>
+                <ion-option>Orange</ion-option>
+                <ion-option>Purple</ion-option>
+                <ion-option>Green</ion-option>
+              </ion-select>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <h3>Wrap</h3>
+      <ion-row *ngFor="let item of wrap" >
+        <ion-col col-4>
+          <span>{{item.name}}</span>
+        </ion-col>
+        <ion-col col-5>
+            <span padding-left>{{item.price}}</span>
+        </ion-col>
+        <ion-col col-3 text-center>
+          <ion-item [ngClass]="{'select-item':item.selectItem}" no-lines>
+            <ion-label *ngIf="!item.selectItem">Colors</ion-label>
+            <ion-select [(ngModel)]="item.colors" (ionChange)="onSelectChange(item)">
+              <ion-option>Red</ion-option>
+              <ion-option>Rose</ion-option>
+              <ion-option>Orange</ion-option>
+              <ion-option>Purple</ion-option>
+              <ion-option>Green</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+    </div>
+</ion-content>
+
+<ion-footer class="main-footer">
+  <ion-row>
+    <ion-col col-8>
+      <ion-item no-lines>
+          Bouquet Cost
+          <span item-end>$ 260</span>
+      </ion-item>
+    </ion-col>
+    <ion-col col-4>
+        <button color="primary" ion-button icon-only block>
+              <ion-icon name="checkmark"></ion-icon>
+        </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

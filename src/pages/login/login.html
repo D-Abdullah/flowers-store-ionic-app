@@ -1,0 +1,55 @@
+<ion-content class="login-register main-bg">
+    <button [navPush]="'HomePage'" class="skip-btn" color="light" ion-button small clear>Skip
+        <ion-icon name="ios-arrow-forward" padding-left></ion-icon>
+    </button> 
+    <div class="logo" padding-top>
+        <h3>Floral<span>for Bouquet</span></h3>
+    </div>
+
+    <div class="app-form">
+        <h3>Login</h3>
+        <ion-list no-margin>
+            <form [formGroup]="loginForm">
+                <ion-item no-lines> 
+                    <ion-icon name="mail" item-start></ion-icon>
+                    <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+                </ion-item>
+
+                <ion-item class="validate-msg" 
+                *ngIf="!loginForm.controls.email.valid && (loginForm.controls.email.dirty)" no-lines> 
+                    <p>Please enter a valid email.</p>
+                </ion-item>
+
+                <ion-item no-lines> 
+                    <ion-icon color="primary" name="key" item-start></ion-icon>
+                    <ion-input formControlName="password"  type="{{type}}" placeholder="Enter pin"></ion-input>
+                    <button (click)="showPsw()" color="GrayColor" ion-button icon-only clear item-end>
+                        <ion-icon *ngIf="type=='text'" name="eye"></ion-icon>
+                        <ion-icon *ngIf="type=='password'" name="eye-off"></ion-icon>
+                    </button>
+                </ion-item>
+
+                <ion-item class="validate-msg" *ngIf="!loginForm.controls.password.valid && (loginForm.controls.password.dirty)" no-lines> 
+                    <p>Passwords must be at least 8 characters, contain at least one uppercase letter, special character and at least one number.</p>
+                </ion-item>
+            </form>
+        </ion-list>
+        <button class="for-psw" (click)="forgotPassword()" color="light" ion-button small clear margin-bottom>Forgot password?</button>
+
+        <button [disabled]="!loginForm.valid" [navPush]="'HomePage'"  ion-button block>Sign in</button>
+        <p class="sign-up">Don`t Have an account ? <span [navPush]="'RegisterPage'" float-end>Sign up</span></p>
+    </div>
+
+    <ion-row class="social-icon">
+        <ion-col col-4>
+            <span><ion-icon color="primary" class="app-facebook"></ion-icon></span>
+        </ion-col>
+        <ion-col col-4>     
+            <span><ion-icon color="primary" name="logo-twitter"></ion-icon></span>
+        </ion-col>
+        <ion-col col-4>
+            <span><ion-icon color="light" class="app-gplus"></ion-icon></span>
+        </ion-col>
+    </ion-row>
+
+</ion-content>

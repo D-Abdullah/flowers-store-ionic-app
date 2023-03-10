@@ -1,0 +1,91 @@
+page-details {
+   .details-img{
+        height: 200px;
+        background: url(../assets/imgs/007.png);
+        @include background(cover, no-repeat, right top);
+        position: relative;
+        margin-top: -5px;
+        z-index: -1;
+        &:after{
+           @extend .light-gradient;
+        }
+        .button-clear{
+            width: 55px;
+            z-index: 100;
+            display: block;
+            ion-icon{
+                font-size: 2rem;
+            }
+        }
+   }
+
+   .details{
+       margin:-20px 12px 12px 12px;
+       border: 1px solid #ddd;
+       box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.25);
+       background:color($colors,light);
+       border-radius: 5px;
+       overflow: hidden;
+       display: inline-block;
+       width:calc(100% - 24px);
+       .details-content{
+            padding: 15px;
+            h3{
+                color: color($colors,primary); 
+                font-size: 1.7rem;
+            }
+            .type-color{
+                .list{
+                    border-bottom: 1px solid #ccc;
+                    display: inline-block;
+                    width: 100%;
+                    padding-bottom: 10px;
+                    margin-bottom: 13px;
+                    &:last-child{
+                        margin-bottom: 0;
+                        padding: 0;
+                        border-bottom: none;
+                    }
+                    .list-header{
+                        border: none;
+                        padding: 0;  
+                        color: color($colors,primary); 
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        margin-bottom: 0;
+                        height: 30px;
+                        min-height: 30px;
+                        .label{
+                            margin: 0;
+                        }
+                    }
+                    .item-block{
+                        border: none;
+                        padding: 0;
+                        width: 50%;
+                        float: left;
+                        font-size: 1.3rem;
+                        height: 27px;
+                        min-height: 27px;
+                        .item-inner{
+                            border: none;    
+                            padding: 0;
+                        }
+                        &.item-radio{
+                            width: 33.33%;
+                            .radio-md {
+                                margin-right: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+       }
+       .button-block{
+           margin: 0;
+           border-radius: 0;
+           color: color($colors,primary); 
+           background: lighten(color($colors,primary), 40%); 
+       }
+   }
+}

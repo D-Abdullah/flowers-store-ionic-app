@@ -1,0 +1,82 @@
+<ion-header>
+
+    <ion-navbar hideBackButton>
+      <button ion-button icon-only menuToggle>
+          <ion-icon color="light" name="menu"></ion-icon>
+      </button> 
+      <ion-title>Setting</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only [navPush]="'CartPage'">
+            <ion-icon name="cart"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+    
+    <h3>Set your personal data</h3>
+    <div class="profile-img">
+      <img src="{{img}}">
+      <span class="upload-img" (click)="getPhoto()"><ion-icon color="light" name="md-camera"></ion-icon></span>
+    </div>
+    <ion-list class="form-style">
+        <ion-item no-lines> 
+          <ion-input type="text" placeholder="Full Name" value="Helena Adam"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines> 
+            <ion-input type="email" placeholder="E-mail" value="Helena@gmail.com"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines> 
+            <ion-input type="password" placeholder="Password" value="Helena12345"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines> 
+          <ion-input type="tel" placeholder="Mobile No" value="+9265747212335"></ion-input>
+        </ion-item>
+
+        <ion-item no-lines> 
+          <ion-input type="text" placeholder="Address" value="22 Freedom St., Newyork "></ion-input>
+        </ion-item>
+    </ion-list>
+
+    <ion-list class="form-style">
+      <ion-item>
+        <ion-label>App Language</ion-label>
+        <ion-select>
+          <ion-option value="english">English</ion-option>
+          <ion-option value="french">French</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <h3>Connect Social media</h3>
+    <ion-list class="social-media" radio-group no-margin>
+        <ion-item no-lines>
+          <span item-start><ion-icon name="logo-facebook"></ion-icon></span>
+          <ion-radio value="visa" checked="true"></ion-radio>
+        </ion-item>
+      
+        <ion-item no-lines>
+          <span item-start><ion-icon name="logo-twitter"></ion-icon></span>
+          <ion-radio value="paypal"></ion-radio>
+        </ion-item>
+        
+        <ion-item no-lines>
+          <span item-start><ion-icon name="logo-googleplus"></ion-icon></span>
+          <ion-radio value="card"></ion-radio>
+        </ion-item>
+    </ion-list>
+
+    <ion-list class="animate-app">
+        <ion-item>
+          <ion-label>Animation Avilability</ion-label>
+          <ion-toggle (ionChange)="animateApp($event)"  checked="{{_myApp.animateVarible}}"></ion-toggle>
+        </ion-item>
+    </ion-list>
+
+</ion-content>

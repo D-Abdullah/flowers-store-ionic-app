@@ -1,0 +1,82 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+        <ion-icon color="light" name="menu"></ion-icon>
+    </button> 
+    <ion-title>cart</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+      <ion-card class="main-list" *ngFor="let item of list" 
+        [ngStyle]="{'background-image': 'url(' + item.img + ')'}" no-lines no-margin>
+
+        <ion-card-content>
+            <ion-card-title>{{item.title}} </ion-card-title>
+            <p>{{item.price}}</p>
+        </ion-card-content>
+
+        <ion-row class="qty-size">
+          <ion-col col-8>
+
+            <ion-list radio-group>
+              <ion-item>
+                <ion-label>S</ion-label>
+                <ion-radio checked="true" value="small"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>M</ion-label>
+                <ion-radio value="medium"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>L</ion-label>
+                <ion-radio value="Large"></ion-radio>
+              </ion-item>
+            </ion-list>
+
+          </ion-col>
+          <ion-col col-4>
+
+              <ion-row class="qty-items" no-padding item-end>
+                  <ion-col no-padding>
+                      <button ion-button icon-only block clear color="primary" (click)="decrementValue(item)" no-margin>
+                            <ion-icon name="md-remove"></ion-icon>
+                      </button>
+                  </ion-col>
+                  <ion-col text-center no-padding>
+                     <span class="qty">{{item.count}}</span>
+                  </ion-col>
+                  <ion-col no-padding>
+                      <button ion-button icon-only block clear color="primary"
+                       (click)="incrementValue(item)" no-margin float-end>
+                            <ion-icon name="md-add"></ion-icon>
+                      </button>
+                  </ion-col>
+              </ion-row>
+
+          </ion-col>
+        </ion-row>
+      </ion-card>
+
+</ion-content>
+
+<ion-footer class="main-footer">
+  <ion-row>
+    <ion-col col-8>
+      <ion-item no-lines>
+          3  Items       
+          <span item-end>Total Cost $ 700</span>
+      </ion-item>
+    </ion-col>
+    <ion-col col-4>
+        <button [navPush]="'CheckoutPage'" color="primary" ion-button icon-only block>
+             <ion-icon name="checkmark"></ion-icon>
+       </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

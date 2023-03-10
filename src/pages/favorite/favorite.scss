@@ -1,0 +1,38 @@
+page-favorite {
+    .main-list{
+        width: calc(50% - 8px);
+        float: left;
+        @include background(cover, no-repeat, center);
+        &:nth-child(2n){
+            margin-left: 8px;
+        }
+        &:nth-child(2n+1){
+            margin-right: 8px;
+        }
+        &:after{
+            display: none;
+        }
+        &:before{
+            box-shadow: inset 0px -38px 125px rgba(0,0,0,0.5);
+        }
+        .item{
+            position: absolute;
+            bottom: 0;
+            background: none;
+            padding-left: 10px;
+            p{
+                color: color($colors,light);   
+                font-weight: 500;
+                margin: 0;
+                font-size: 1.3rem;
+                span{
+                    display: block;
+                    margin-top: 5px;
+                }
+            }
+            [item-end]{
+                margin: 0;
+            }
+        }
+    }
+}

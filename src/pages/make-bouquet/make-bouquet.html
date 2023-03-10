@@ -1,0 +1,72 @@
+<ion-header>
+
+    <ion-navbar hideBackButton>
+      <button ion-button icon-only menuToggle>
+          <ion-icon color="light" name="menu"></ion-icon>
+      </button> 
+      <ion-title>Make Your Bouquet</ion-title>
+      <ion-buttons end>
+        <button ion-button icon-only [navPush]="'CartPage'">
+            <ion-icon name="cart"></ion-icon>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+     
+    <ion-row class="special-grid" *ngFor="let item of list">
+      <ion-col col-5 no-padding>
+         <img class="item-img" src="{{item.img}}">
+      </ion-col>
+
+      <ion-col col-7 no-padding>
+        <ion-item no-lines>
+          <ion-label>{{item.name}}</ion-label>
+          <ion-checkbox item-end></ion-checkbox>
+        </ion-item>
+
+        <ion-list radio-group>
+          <ion-item no-lines>
+            <ion-label>Small</ion-label>
+            <ion-note>Contain 30 Flowers</ion-note>
+            <ion-radio checked="true" value="small" item-start></ion-radio>
+            <span item-end>{{item.pricesmall}}</span>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label>Medium</ion-label>
+            <ion-note>Contain 50 Flowers</ion-note>
+            <ion-radio value="medium" item-start></ion-radio>
+            <span item-end>{{item.pricemedium}}</span>
+          </ion-item>
+
+          <ion-item no-lines>
+            <ion-label>Large</ion-label>
+            <ion-note>Contain 80 Flowers</ion-note>
+            <ion-radio value="large" item-start></ion-radio>
+            <span item-end>{{item.pricelarg}}</span>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+
+</ion-content>
+
+<ion-footer class="main-footer">
+  <ion-row>
+    <ion-col col-8>
+      <ion-item no-lines>
+          Rose Bouquet 
+          <span item-end>$ 100</span>
+      </ion-item>
+    </ion-col>
+    <ion-col col-4>
+        <button [navPush]="'BouquetDetailsPage'" color="primary" ion-button icon-only block>
+              <ion-icon name="checkmark"></ion-icon>
+        </button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

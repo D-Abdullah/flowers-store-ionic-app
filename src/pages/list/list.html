@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>list</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only [navPush]="'CartPage'">
+          <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card class="main-list" [navPush]="'DetailsPage'" *ngFor="let item of list" 
+      [ngStyle]="{'background-image': 'url(' + item.img + ')'}" no-lines no-margin>
+
+      <ion-card-content>
+        <ion-card-title>{{item.title}} </ion-card-title>
+        <p>{{item.price}}</p>
+      </ion-card-content>
+
+    </ion-card>
+
+</ion-content>
